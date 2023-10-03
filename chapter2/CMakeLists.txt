@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.0)
+project(CHAPTER2)
+find_package(OpenCV REQUIRED)
+add_executable(chapter2 chapter2.cpp)
+target_include_directories(chapter2 PUBLIC ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(chapter2 ${OpenCV_LIBS})
