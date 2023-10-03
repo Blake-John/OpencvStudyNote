@@ -21,6 +21,9 @@ int main ()
 
     //todo draw a rectangle
     //* we can define a rectangle by an roi 
+    // Rect roi (130,226,382-130,286-226);
+    // rectangle (img,roi,Scalar (255,255,255),FILLED);
+    
     //* or we can use two point to define it,
     //* the first point and the second point oppsite to the first one
     rectangle (img,Point (130,226),Point (382,286),Scalar (255,255,255),FILLED);
