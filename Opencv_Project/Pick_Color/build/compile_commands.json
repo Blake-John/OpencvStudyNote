@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/blake/桌面/Opencv_learn/Opencv_Project/Pick_Color/build",
+  "command": "/usr/bin/g++   -isystem /usr/local/include/opencv4  -g   -o CMakeFiles/main.dir/main.cpp.o -c /home/blake/桌面/Opencv_learn/Opencv_Project/Pick_Color/main.cpp",
+  "file": "/home/blake/桌面/Opencv_learn/Opencv_Project/Pick_Color/main.cpp"
+}
+]

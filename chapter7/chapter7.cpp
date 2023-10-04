@@ -20,6 +20,7 @@ void getContours (Mat imgDila,Mat img)
     vector <vector <Point> > contours;
     // 用于存放得到的多边形的点的坐标
     // 每一组坐标值连起来就对应一个多边形
+    
     vector <Vec4i> hierarchy;
     findContours (imgDila,contours,hierarchy,RETR_EXTERNAL,CHAIN_APPROX_SIMPLE);
     // findContours (input_img,output_contours,hierarchy,mode,method)

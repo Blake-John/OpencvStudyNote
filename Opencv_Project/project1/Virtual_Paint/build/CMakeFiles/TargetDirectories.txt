@@ -1,0 +1,3 @@
+/home/blake/桌面/Opencv_learn/Opencv_Project/project1/Virtual_Paint/build/CMakeFiles/rebuild_cache.dir
+/home/blake/桌面/Opencv_learn/Opencv_Project/project1/Virtual_Paint/build/CMakeFiles/edit_cache.dir
+/home/blake/桌面/Opencv_learn/Opencv_Project/project1/Virtual_Paint/build/CMakeFiles/main.dir
