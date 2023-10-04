@@ -1,0 +1,3 @@
+/home/blake/桌面/Opencv_learn/Opencv_Project/project2/Document_Scanner/build/CMakeFiles/rebuild_cache.dir
+/home/blake/桌面/Opencv_learn/Opencv_Project/project2/Document_Scanner/build/CMakeFiles/edit_cache.dir
+/home/blake/桌面/Opencv_learn/Opencv_Project/project2/Document_Scanner/build/CMakeFiles/main.dir

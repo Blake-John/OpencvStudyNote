@@ -19,8 +19,10 @@ vector <Scalar> myColorValues {
 
 Mat img;
 
+vector <vector <int>> newPoint;
 
-void getContours(Mat imgDil) 
+
+Point getContours(Mat imgDil) 
 {
 	vector<vector<Point>> contours;
 	vector<Vec4i> hierarchy;
@@ -30,11 +32,12 @@ void getContours(Mat imgDil)
 
 	vector<vector<Point>> conPoly(contours.size());
 	vector<Rect> boundRect(contours.size());
-	 
+	Point myPoint (0,0);
+
 	for (int i = 0; i < contours.size(); i++)
 	{
 		int area = contourArea(contours[i]);
-		cout << area << endl;
+		// cout << area << endl;
 		string objectType;
 
 		if (area > 1000) 
@@ -42,19 +45,21 @@ void getContours(Mat imgDil)
 			float peri = arcLength(contours[i], true);
 			approxPolyDP(contours[i], conPoly[i], 0.02 * peri, true);
 
-			cout << conPoly[i].size() << endl;
+			// cout << conPoly[i].size() << endl;
 			boundRect[i] = boundingRect(conPoly[i]);
 		
-			int objCor = (int)conPoly[i].size();
-
+            myPoint.x = boundRect[i].x + boundRect[i].width / 2;
+            myPoint.y = boundRect[i].y + boundRect[i].height;
 
 			drawContours(img, conPoly, i, Scalar(255, 0, 255), 2);
+            rectangle (img,boundRect[i].tl (),boundRect[i].br (),Scalar (0,255,0),5);
 		}
 	}
+    return myPoint;
 }
 
 
-void findColor (Mat img)
+vector <vector <int>> findColor (Mat img)
 {
     Mat imgHSV, mask;
 
@@ -68,12 +73,24 @@ void findColor (Mat img)
         inRange (img,lower,upper,mask);
 
         // imshow (to_string (i),mask);
-        getContours (mask);
-
+        Point myPoint = getContours (mask);
+        
+        if (myPoint.x != 0 and myPoint.y != 0)
+        {
+            newPoint.push_back ({myPoint.x,myPoint.y,i});
+        }
     }
-
+    return newPoint;
 }
 
+
+void drawPoint (vector <vector <int>> newPoint,vector <Scalar> myColorValues)
+{
+    for (int i = 0; i < newPoint.size (); i++)
+    {
+        circle (img,Point (newPoint[i][0],newPoint[i][1]),10,myColorValues[newPoint[i][2]],FILLED);
+    }
+}
 
 int main ()
 {
@@ -82,7 +99,7 @@ int main ()
     while (true)
     {
         cap.read (img);
-        findColor (img);
+        drawPoint (findColor (img),myColorValues);
 
         imshow ("Webcam",img);
         waitKey (1);
