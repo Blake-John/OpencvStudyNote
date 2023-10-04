@@ -16,7 +16,7 @@ int main ()
 
     //todo warpPerspective
     //* we should create a matrix help to transform the img
-    //* to create the img, we should define two assemble of points
+    //* to create the matrix, we should define two assemble of points
     //* which represent the initial displacement and the ultimate displacement
 
     Point2f scr[4] = {{700,350},{1200,400},{600,600},{1000,700}};

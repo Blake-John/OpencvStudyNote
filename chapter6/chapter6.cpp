@@ -41,6 +41,7 @@ int main ()
         //* it says when we use the track bars, we should keep what we want remain white
         Scalar lower (hmin,smin,vmin), upper (hmax,smax,vmax);
         inRange (imgHSV,lower,upper,mask);
+        // inRange (inuput_img,lower_color,upper_color,output_img)
 
         //todo Create a track bar
         //? why to create a track bar?
