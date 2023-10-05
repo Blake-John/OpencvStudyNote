@@ -9,12 +9,14 @@ using namespace cv;
 vector <vector <int>> myColors {
     {124,48,117,143,170,255}, // purple
     {68,72,156,102,126,255}, // green
+    {163,214,100,179,255,188} // red
     };
 // {hmin,smin,vmin,hmax,smax,vmax}
 
 vector <Scalar> myColorValues {
     {255,0,255}, //purple
     {0,255,0}, // green
+    {0,0,255},
     };
 
 Mat img;
@@ -40,7 +42,7 @@ Point getContours(Mat imgDil)
 		// cout << area << endl;
 		string objectType;
 
-		if (area > 1000) 
+		if (area > 500) 
 		{
 			float peri = arcLength(contours[i], true);
 			approxPolyDP(contours[i], conPoly[i], 0.02 * peri, true);
