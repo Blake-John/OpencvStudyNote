@@ -9,8 +9,8 @@ using namespace cv;
 int main ()
 {
     Mat img, imgHSV, mask;
-    int hmin = 0, smin = 0, vmin = 0;
-    int hmax = 179, smax = 255, vmax = 255;
+    int hmin = 5, smin = 0, vmin = 221;
+    int hmax = 101, smax = 209, vmax = 255;
 
 
     namedWindow ("Color Picker");
@@ -24,7 +24,7 @@ int main ()
     
     while (true)
     {
-        img =imread ("/home/blake/桌面/detector/color_pick/target.png");
+        img =imread ("/home/blake/桌面/detector/20231006-130844.png");
 
         cvtColor (img,imgHSV,COLOR_BGR2HSV);
         Scalar lower (hmin,smin,vmin), upper (hmax,smax,vmax);
