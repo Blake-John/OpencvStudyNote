@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.0)
+project(COLORPICK)
+find_package(OpenCV REQUIRED)
+add_executable(pick pick.cpp)
+target_include_directories(pick PUBLIC ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(pick ${OpenCV_LIBS})
